@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ViewController: UIViewController {
 
+    
+    var input: AVCaptureDeviceInput!
+    var output: AVCapturePhotoOutput!
+    var session: AVCaptureSession!
+
+    
+    /// View Elements
+    @IBOutlet weak var cameraView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
-
