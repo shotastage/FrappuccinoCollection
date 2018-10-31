@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Coeur
 import AVFoundation
 
 
@@ -56,7 +57,7 @@ extension ViewController {
             input = try AVCaptureDeviceInput(device: camera)
             
         } catch let error as NSError {
-            print(error)
+            Alert.confirm(message: "Camera device error has been occurred! \(error)")
         }
     }
 }

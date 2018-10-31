@@ -14,6 +14,7 @@
 		25C5FE212189F93D00C40317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C5FE1F2189F93D00C40317 /* LaunchScreen.storyboard */; };
 		25C5FE2C2189F93D00C40317 /* Deep_FrappuccinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5FE2B2189F93D00C40317 /* Deep_FrappuccinoTests.swift */; };
 		25C5FE372189F93D00C40317 /* Deep_FrappuccinoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5FE362189F93D00C40317 /* Deep_FrappuccinoUITests.swift */; };
+		25E871FA218A091E00F401D4 /* Coeur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E871F9218A091E00F401D4 /* Coeur.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		25C5FE322189F93D00C40317 /* Deep FrappuccinoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Deep FrappuccinoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C5FE362189F93D00C40317 /* Deep_FrappuccinoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deep_FrappuccinoUITests.swift; sourceTree = "<group>"; };
 		25C5FE382189F93D00C40317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25E871F9218A091E00F401D4 /* Coeur.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Coeur.framework; path = Carthage/Build/iOS/Coeur.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E871FA218A091E00F401D4 /* Coeur.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				25C5FE2A2189F93D00C40317 /* Deep FrappuccinoTests */,
 				25C5FE352189F93D00C40317 /* Deep FrappuccinoUITests */,
 				25C5FE142189F93C00C40317 /* Products */,
+				25E871F8218A091D00F401D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +137,14 @@
 			path = MLModels;
 			sourceTree = "<group>";
 		};
+		25E871F8218A091D00F401D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25E871F9218A091E00F401D4 /* Coeur.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +155,7 @@
 				25C5FE0F2189F93C00C40317 /* Sources */,
 				25C5FE102189F93C00C40317 /* Frameworks */,
 				25C5FE112189F93C00C40317 /* Resources */,
+				25E871FB218A093000F401D4 /* Carthage Copy */,
 			);
 			buildRules = (
 			);
@@ -258,6 +271,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25E871FB218A093000F401D4 /* Carthage Copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Coeur.framework",
+			);
+			name = "Carthage Copy";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25C5FE0F2189F93C00C40317 /* Sources */ = {
@@ -441,7 +476,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Deep Frappuccino/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +498,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Deep Frappuccino/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
