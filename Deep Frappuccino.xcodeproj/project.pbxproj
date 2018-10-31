@@ -97,6 +97,7 @@
 		25C5FE152189F93C00C40317 /* Deep Frappuccino */ = {
 			isa = PBXGroup;
 			children = (
+				25C5FE442189FA3200C40317 /* MLModels */,
 				25C5FE162189F93C00C40317 /* AppDelegate.swift */,
 				25C5FE182189F93C00C40317 /* ViewController.swift */,
 				25C5FE1A2189F93C00C40317 /* Main.storyboard */,
@@ -123,6 +124,13 @@
 				25C5FE382189F93D00C40317 /* Info.plist */,
 			);
 			path = "Deep FrappuccinoUITests";
+			sourceTree = "<group>";
+		};
+		25C5FE442189FA3200C40317 /* MLModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MLModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
