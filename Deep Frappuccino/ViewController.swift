@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var input: AVCaptureDeviceInput!
     var output: AVCapturePhotoOutput!
     var session: AVCaptureSession!
+    var camera: AVCaptureDevice!
 
     
     /// View Elements
@@ -25,5 +26,37 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setupCamera()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        // TODO: Free memory
+    }
+
+    @IBAction func captureCamera(_ sender: Any) {
+        // TODO: Do something when capture button tapped.
+    }
+}
+
+
+
+extension ViewController {
+    
+    fileprivate func setupCamera() {
+        
+        /// Session
+        session = AVCaptureSession()
+        
+        /// Select back camera
+        camera = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera,
+                                         for: AVMediaType.video, position: .back)
+        
+
+        do {
+            input = try AVCaptureDeviceInput(device: camera)
+            
+        } catch let error as NSError {
+            print(error)
+        }
     }
 }

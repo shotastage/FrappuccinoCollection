@@ -27,6 +27,9 @@
                                             <constraint firstAttribute="height" constant="53" id="s4J-2Q-3sa"/>
                                         </constraints>
                                         <state key="normal" title="Capture"/>
+                                        <connections>
+                                            <action selector="captureCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyw-Bw-cZ9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
